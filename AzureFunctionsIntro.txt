@@ -1,0 +1,23 @@
+Orchestration and Choreography with Azure Functions
+
+1. SAGA pattern
+ - main purpose and description
+ - Choreography
+ - Orchestration
+2. Azure functions as a core component of azure message based communication
+ - what is Azure function
+ - serverlsess approach
+ - common azure functions
+ - azure function triggers and bindings
+3. Durable Azure functions as a way to implement orchestration
+ - Azure Durable functions main principles
+ - some restrictions related to event sourcing
+ - sub orchestration
+ - durable entities
+ - waiting for user interaction
+ - other patterns (fan-in/fan-out, etc)
+ 
+4. Example of Azure Durable Functions usage for DA salary voting process
+
+//TODO add calculator service to calculate current salary's raise availiblity
+//TODO add
