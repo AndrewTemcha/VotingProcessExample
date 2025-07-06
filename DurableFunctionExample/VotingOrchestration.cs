@@ -17,11 +17,11 @@ namespace DurableFunctionExample
     public static class VotingOrchestration
     {
         private const int DaysForApproval = 14;
-        
+
         #region sub-orchestration for board of directors voting process
 
         /// <summary>
-        /// Sub Orchestration for voting specifically for Board of Directors
+        /// Sub Orchestration for voting specifically for Board of Directors: Message will be sent to all BOD members
         /// </summary>
         [FunctionName(nameof(BoardOfDirectorsApprovalOrchestrator))]
         public static async Task BoardOfDirectorsApprovalOrchestrator(
