@@ -14,5 +14,19 @@ internal class ApprovalV2
         // This method returns the version of the approval model
         Console.WriteLine($"Approval Model Version: {version}");
     }
+
+    void SetVersion(int newVersion)
+    {
+        // This method sets a new version for the approval model
+        if (newVersion > version)
+        {
+            Console.WriteLine($"Updating Approval Model Version from {version} to {newVersion}");
+            // Logic to update the version can be added here
+        }
+        else
+        {
+            Console.WriteLine($"Cannot set version to {newVersion}. It must be greater than current version {version}.");
+        }
+    }
 }
     
