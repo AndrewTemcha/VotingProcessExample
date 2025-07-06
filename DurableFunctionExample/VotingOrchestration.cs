@@ -102,7 +102,7 @@ namespace DurableFunctionExample
         [FunctionName(nameof(GetApprovalOrchestrator))]
         public static async Task GetApprovalOrchestrator(
             [OrchestrationTrigger] IDurableOrchestrationContext ctx,
-            ILogger log)
+            ILogger log, IVotingEntity voringEntity)
         {
             var requesterEmail = ctx.GetInput<string>();
 
@@ -139,9 +139,9 @@ namespace DurableFunctionExample
             //In this case we ensure that we have only one entity per voting process by using orchestration ID as a key
             var entityId = new EntityId(nameof(VotingEntity), ctx.InstanceId);
 
-            var voringEntity = ctx.CreateEntityProxy<IVotingEntity>(entityId);
+            var voringEntityEntry = ctx.CreateEntityProxy<IVotingEntity>(entityId);
 
-            voringEntity.NewVotingFor(requesterEmail);
+            voringEntityEntry.NewVotingFor(requesterEmail);
 
             while (true) 
             {
@@ -160,7 +160,7 @@ namespace DurableFunctionExample
                     var approver = externalEventTask.Result.Approver;
                     if (externalEventTask.Result.IsApproved)
                     {
-                        await voringEntity.AddApprover(approver);
+                        await voringEntityEntry.AddApprover(approver);
 
                         voting.ApprovedBy.Add(approver);
                         if (!ctx.IsReplaying) log.LogInformation($"Approval received from {approver}");
