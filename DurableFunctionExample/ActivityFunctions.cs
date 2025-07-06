@@ -34,7 +34,7 @@ namespace DurableFunctionExample
             //send an email with html containing options to either approve or decline the request
             //or just put the message to queue to process it the way you want (using bindings)
 
-            var approveLink = $"/SubmitApproval/{instanceId}/{Approvers.BODMember}/true";
+            var approveLink = $"/SubmitApprovalTest/{instanceId}/{Approvers.BODMember}/true";
             var rejectLink = $"/SubmitApproval/{instanceId}/{Approvers.BODMember}/false";
 
             log.LogInformation($"Use next link to approve salary request: {approveLink} or reject it with {rejectLink}");
