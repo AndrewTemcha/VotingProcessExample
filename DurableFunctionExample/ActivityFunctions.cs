@@ -22,7 +22,7 @@ namespace DurableFunctionExample
 
             return new AvailabilityResult()
             {
-                IsAvailable = true,
+                IsAvailable = false,
                 Threshold = 200,
             };
         }
