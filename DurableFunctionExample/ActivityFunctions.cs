@@ -16,7 +16,7 @@ namespace DurableFunctionExample
         public static async Task<AvailabilityResult> CheckAvailabilityFor([ActivityTrigger] string email, ILogger log)
         {
             //check against specific user if project has enough $ to raise his salary
-            log.LogInformation($"Checking availability for {email}");
+            log.LogInformation($"Checking availability for {email}. Logging");
 
             await Task.Delay(2000);
 
