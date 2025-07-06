@@ -23,7 +23,7 @@ namespace DurableFunctionExample
             return new AvailabilityResult()
             {
                 IsAvailable = true,
-                Threshold = 500,
+                Threshold = 200,
             };
         }
         [FunctionName(nameof(NotifyBODMembers))]
