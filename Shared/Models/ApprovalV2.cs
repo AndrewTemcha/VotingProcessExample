@@ -28,5 +28,11 @@ internal class ApprovalV2
             Console.WriteLine($"Cannot set version to {newVersion}. It must be greater than current version {version}.");
         }
     }
+
+    void DisplayVersionInfo()
+    {
+        // This method displays the current version information
+        Console.WriteLine($"Current Approval Model Version: {version}");
+    }
 }
     
