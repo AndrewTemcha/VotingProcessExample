@@ -79,5 +79,7 @@ namespace DurableFunctionExample
                 throw new ArgumentException($"Approver {approvedBy} is not allowed to vote");
             }
         }
+
+        <string, AvailabilityResult> CheckAvailabilityForConverter = new FuncAsyncConverter<string, AvailabilityResult>(CheckAvailabilityFor);
     }
 }
