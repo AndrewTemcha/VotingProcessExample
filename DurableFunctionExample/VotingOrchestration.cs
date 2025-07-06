@@ -16,7 +16,7 @@ namespace DurableFunctionExample
 {
     public static class VotingOrchestration
     {
-        private const int DaysForApproval = 14;
+        private const int DaysForApproval = 10;
 
         #region sub-orchestration for board of directors voting process
 
